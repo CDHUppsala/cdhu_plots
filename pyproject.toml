@@ -1,0 +1,15 @@
+[project]
+name = "cdhu_plots"
+version = "0.1.0"
+description = "CDHU style plots in Python"
+authors = [{author="Matias Piqueras", email= "matias.piqueras@uppmax.uu.se"}]
+license = {file="LICENSE"}
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = ["matplotlib", "plotly"]
+
+[tools.setuptools.packages.find]
+where = ["cdhu_plots"]
+
+[tool.setuptools.package-data]
+"*" = ["*.mplstyle", "*.ttf", "*.py"]
