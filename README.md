@@ -9,7 +9,7 @@ This package provides a CDHU theme for `matplotlib` and `plotly`.  The
 Install the package using `pip` directly from GitHub
 
 ``` bash
-pip install git+
+pip install git+https://github.com/CDHUppsala/cdhu_plots
 ```
 
 ## Examples
@@ -33,8 +33,29 @@ with plt.style.context(['cdhu', 'scatter']):
     ax.set_xlabel("X label")
     ax.set_ylabel("Y label")
     ax.set_title("This is a title")
-    plt.savefig("figures/plt_fig1.png", dpi=500)
 ```
 
 ![](figures/plt_fig1.png)
 
+
+``` python
+# Plotly example
+import cdhu_plots
+import plotly.express as px
+
+
+df = px.data.gapminder()
+df_2007 = df.query("year==2007")
+
+fig = px.scatter(df_2007,
+                 x="gdpPercap", 
+                 y="lifeExp", 
+                 size="pop", 
+                 color="continent",
+                 log_x=True, 
+                 size_max=60, 
+                 title="Gapminder 2007", 
+                 template="cdhu")
+```
+
+![](figures/plotly_fig1.png)

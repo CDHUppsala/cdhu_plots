@@ -11,5 +11,8 @@ dependencies = ["matplotlib", "plotly"]
 [tools.setuptools.packages.find]
 where = ["cdhu_plots"]
 
+[tool.setuptools]
+py-modules = []
+
 [tool.setuptools.package-data]
 "*" = ["*.mplstyle", "*.ttf", "*.py"]
