@@ -2,18 +2,20 @@
 from os import listdir
 from os.path import isdir, join
 
+from cdhu_plots.cdhu_plotly import cdhu
+
 import matplotlib.pyplot as plt
-from matplotlib import font_manager
 import pkg_resources
+from matplotlib import font_manager
+
 
 font_files = font_manager.findSystemFonts(fontpaths="cdhu_plots/Lato/")
 for font in font_files:
-    print(font)
     font_manager.fontManager.addfont(font)
 
 
 # register the included stylesheet in the matplotlib style library
-data_path = pkg_resources.resource_filename("cdhu_plots", "plt/")
+data_path = pkg_resources.resource_filename("cdhu_plots", "cdhu_plt/")
 stylesheets = plt.style.core.read_style_directory(data_path)  # Reads styles in /styles
 # Reads styles in /styles subfolders
 for inode in listdir(data_path):
